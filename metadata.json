@@ -1,0 +1,6 @@
+{
+  "name": "Vitality Fitness & Gym Club",
+  "description": "High-performance fitness and gym web application featuring class schedules, trainer rosters, membership plans, workouts, and admin management matching the Vitality aesthetic.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

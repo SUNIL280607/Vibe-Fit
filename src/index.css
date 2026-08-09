@@ -1,0 +1,162 @@
+@import "tailwindcss";
+
+@theme {
+  --color-royal-gold: #C5A059;
+  --color-royal-gold-hover: #B08D46;
+  --color-royal-gold-light: #DFBF7A;
+  --color-royal-gold-dark: #9A7B38;
+  --color-royal-gold-muted: rgba(197, 160, 89, 0.15);
+  --color-brand-orange: #FF5200;
+  --color-brand-orange-hover: #E04800;
+  --color-dark-bg: #111111;
+  --color-dark-card: #1C1C1E;
+  --color-dark-surface: #242426;
+}
+
+@layer base {
+  :root {
+    --color-royal-gold: #C5A059;
+    --color-royal-gold-hover: #B08D46;
+    --color-royal-gold-light: #DFBF7A;
+    --color-royal-gold-dark: #9A7B38;
+    --color-royal-gold-muted: rgba(197, 160, 89, 0.15);
+    --color-brand-orange: #FF5200;
+    --color-brand-orange-hover: #E04800;
+    --color-dark-bg: #111111;
+    --color-dark-card: #1C1C1E;
+    --color-dark-surface: #242426;
+  }
+
+  body {
+    font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    background-color: #111111;
+    color: #F3F4F6;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Oswald', 'Plus Jakarta Sans', sans-serif;
+    letter-spacing: 0.02em;
+  }
+}
+
+/* Vitality Accent Text Highlights */
+.orange-highlight {
+  color: #FF5200;
+}
+
+.gold-highlight {
+  color: #C5A059;
+}
+
+/* Custom Card Container matching uploaded image */
+.vitality-card {
+  background-color: #1C1C1E;
+  border: 1px solid #2A2A2D;
+  border-radius: 12px;
+}
+
+.vitality-card-gold {
+  background-color: #1C1C1E;
+  border: 1px solid #C5A059;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(197, 160, 89, 0.12);
+}
+
+.vitality-card-hover {
+  transition: all 0.3s ease;
+}
+
+.vitality-card-hover:hover {
+  transform: translateY(-4px);
+  border-color: #C5A059;
+  box-shadow: 0 10px 25px -5px rgba(197, 160, 89, 0.25);
+}
+
+/* Primary Gold Button */
+.btn-gold {
+  background-color: #C5A059;
+  color: #111111;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-gold:hover {
+  background-color: #B08D46;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Gold Outline Button */
+.btn-gold-outline {
+  background-color: transparent;
+  color: #C5A059;
+  border: 1px solid #C5A059;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-gold-outline:hover {
+  background-color: #C5A059;
+  color: #111111;
+  box-shadow: 0 6px 20px rgba(197, 160, 89, 0.3);
+}
+
+/* Primary Orange Button */
+.btn-orange {
+  background-color: #FF5200;
+  color: #FFFFFF;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-orange:hover {
+  background-color: #E04800;
+  box-shadow: 0 6px 20px rgba(255, 82, 0, 0.4);
+  transform: translateY(-1px);
+}
+
+/* Dark Secondary Button */
+.btn-dark {
+  background-color: #242426;
+  color: #FFFFFF;
+  border: 1px solid #3A3A3D;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  border-radius: 6px;
+}
+
+.btn-dark:hover {
+  background-color: #2E2E32;
+  border-color: #C5A059;
+  color: #C5A059;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #111111;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #2A2A2D;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #C5A059;
+}

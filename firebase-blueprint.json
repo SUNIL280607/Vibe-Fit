@@ -1,0 +1,162 @@
+{
+  "entities": {
+    "User": {
+      "title": "User",
+      "description": "Registered gym member or staff user profile",
+      "type": "object",
+      "properties": {
+        "uid": { "type": "string" },
+        "name": { "type": "string" },
+        "email": { "type": "string" },
+        "phone": { "type": "string" },
+        "role": { "type": "string" },
+        "avatar": { "type": "string" },
+        "membershipPlan": { "type": "string" },
+        "membershipStatus": { "type": "string" },
+        "joinDate": { "type": "string" },
+        "lastActivity": { "type": "string" },
+        "streakDays": { "type": "number" },
+        "weightKg": { "type": "number" },
+        "targetWeightKg": { "type": "number" },
+        "heightCm": { "type": "number" }
+      },
+      "required": ["uid", "email", "name"]
+    },
+    "Class": {
+      "title": "Class",
+      "description": "Fitness group class session",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "level": { "type": "string" },
+        "trainerId": { "type": "string" },
+        "trainerName": { "type": "string" },
+        "trainerAvatar": { "type": "string" },
+        "dayOfWeek": { "type": "string" },
+        "time": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "room": { "type": "string" },
+        "capacity": { "type": "number" },
+        "bookedCount": { "type": "number" },
+        "image": { "type": "string" },
+        "description": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" }
+      },
+      "required": ["name", "category", "dayOfWeek", "time"]
+    },
+    "Booking": {
+      "title": "Booking",
+      "description": "Class reservation booking by a user",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "classId": { "type": "string" },
+        "className": { "type": "string" },
+        "trainerName": { "type": "string" },
+        "date": { "type": "string" },
+        "time": { "type": "string" },
+        "status": { "type": "string" },
+        "room": { "type": "string" },
+        "image": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "className", "date", "time"]
+    },
+    "Trainer": {
+      "title": "Trainer",
+      "description": "Fitness trainer profile",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "title": { "type": "string" },
+        "avatar": { "type": "string" },
+        "rating": { "type": "number" },
+        "reviewCount": { "type": "number" },
+        "bio": { "type": "string" },
+        "experienceYears": { "type": "number" },
+        "hourlyRate": { "type": "number" }
+      },
+      "required": ["name", "title"]
+    },
+    "WorkoutLog": {
+      "title": "WorkoutLog",
+      "description": "Log of completed user workout",
+      "type": "object",
+      "properties": {
+        "userId": { "type": "string" },
+        "date": { "type": "string" },
+        "exercise": { "type": "string" },
+        "category": { "type": "string" },
+        "durationMinutes": { "type": "number" },
+        "caloriesBurned": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["userId", "exercise", "category"]
+    },
+    "Equipment": {
+      "title": "Equipment",
+      "description": "Gym facility equipment inventory item",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string" },
+        "category": { "type": "string" },
+        "quantity": { "type": "number" },
+        "reorderLevel": { "type": "number" },
+        "status": { "type": "string" },
+        "unitCost": { "type": "number" },
+        "lastMaintenance": { "type": "string" },
+        "nextMaintenance": { "type": "string" },
+        "condition": { "type": "string" }
+      },
+      "required": ["name", "category", "quantity"]
+    },
+    "Invoice": {
+      "title": "Invoice",
+      "description": "Billing invoice for gym membership",
+      "type": "object",
+      "properties": {
+        "invoiceNumber": { "type": "string" },
+        "memberName": { "type": "string" },
+        "memberEmail": { "type": "string" },
+        "date": { "type": "string" },
+        "dueDate": { "type": "string" },
+        "amount": { "type": "number" },
+        "status": { "type": "string" },
+        "planName": { "type": "string" }
+      },
+      "required": ["invoiceNumber", "memberName", "amount"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": { "$ref": "#/entities/User" },
+      "description": "User profile document"
+    },
+    "/classes/{classId}": {
+      "schema": { "$ref": "#/entities/Class" },
+      "description": "Group fitness classes collection"
+    },
+    "/bookings/{bookingId}": {
+      "schema": { "$ref": "#/entities/Booking" },
+      "description": "User class bookings"
+    },
+    "/trainers/{trainerId}": {
+      "schema": { "$ref": "#/entities/Trainer" },
+      "description": "Gym trainers directory"
+    },
+    "/workoutLogs/{logId}": {
+      "schema": { "$ref": "#/entities/WorkoutLog" },
+      "description": "User workout logs"
+    },
+    "/equipment/{equipmentId}": {
+      "schema": { "$ref": "#/entities/Equipment" },
+      "description": "Gym equipment inventory"
+    },
+    "/invoices/{invoiceId}": {
+      "schema": { "$ref": "#/entities/Invoice" },
+      "description": "Membership invoices"
+    }
+  }
+}
